@@ -6,31 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Book List</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Title</th>
-				<th>Author</th>
-				<th>Year</th>
-				<th>ISBN</th>
-				<th>Price</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="book : ${bookList}">
-				<td th:text="${book.id}"></td>
-				<td th:text="${book.title}"></td>
-				<td th:text="${book.author}"></td>
-				<td th:text="${book.year}"></td>
-				<td th:text="${book.isbn}"></td>
-				<td th:text="${book.price}"></td>
-			</tr>
-		</tbody>
-	</table>
+	<h1>Books</h1>
 
-	<h2>Individual Books</h2>
 	<table>
 		<thead>
 			<tr>
