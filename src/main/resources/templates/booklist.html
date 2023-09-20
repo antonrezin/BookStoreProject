@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Book List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Book List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Year</th>
+				<th>ISBN</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${bookList}">
+				<td th:text="${book.id}"></td>
+				<td th:text="${book.title}"></td>
+				<td th:text="${book.author}"></td>
+				<td th:text="${book.year}"></td>
+				<td th:text="${book.isbn}"></td>
+				<td th:text="${book.price}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>Individual Books</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Year</th>
+				<th>ISBN</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${book1.title}"></td>
+				<td th:text="${book1.author}"></td>
+				<td th:text="${book1.year}"></td>
+				<td th:text="${book1.isbn}"></td>
+				<td th:text="${book1.price}"></td>
+			</tr>
+			<tr>
+				<td th:text="${book2.title}"></td>
+				<td th:text="${book2.author}"></td>
+				<td th:text="${book2.year}"></td>
+				<td th:text="${book2.isbn}"></td>
+				<td th:text="${book2.price}"></td>
+			</tr>
+			<tr>
+				<td th:text="${book3.title}"></td>
+				<td th:text="${book3.author}"></td>
+				<td th:text="${book3.year}"></td>
+				<td th:text="${book3.isbn}"></td>
+				<td th:text="${book3.price}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
