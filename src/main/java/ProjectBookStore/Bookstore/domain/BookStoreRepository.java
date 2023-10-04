@@ -1,4 +1,4 @@
-package ProjectBookStore.Bookstore.Entity;
+package ProjectBookStore.Bookstore.domain;
 
 import org.springframework.data.repository.CrudRepository;
 
