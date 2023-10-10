@@ -1,4 +1,4 @@
-package ProjectBookStore.Bookstore.domain;
+ package ProjectBookStore.Bookstore.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,21 +11,22 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private String title;
-	private String author;
+	private String title, author;
 
 	@Column(name = "publishing_year")
 	private int year;
 	private String isbn;
 	private double price;
 
+	public Book() {}
+	
 	public Book(String title, String author, int year, String isbn, double price) {
+		super();
 		this.title = title;
 		this.author = author;
 		this.year = year;
 		this.isbn = isbn;
 		this.price = price;
-
 	}
 
 	public long getId() {
@@ -75,6 +76,5 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
 	
 }
