@@ -3,6 +3,7 @@ package ProjectBookStore.Bookstore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,9 +29,9 @@ public class BookController {
 	}
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(Book book) {
-		repository.save(book);
-		return "redirect:booklist";
+	public String save(@ModelAttribute Book book) {
+	    repository.save(book);
+	    return "redirect:/booklist";
 	}
 
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
@@ -38,4 +39,10 @@ public class BookController {
 		repository.deleteById(bookId);
 		return "redirect:/booklist";
 	}
+	
+	@RequestMapping(value = "/editbook/{id}")
+    public String showEditBook(@PathVariable("id") Long bookId, Model model) {
+        model.addAttribute("book", repository.findById(bookId));
+        return "editbook";
+    }
 }
