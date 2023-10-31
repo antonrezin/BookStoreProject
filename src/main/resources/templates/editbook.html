@@ -3,25 +3,33 @@
 <head>
     <title>Edit Book</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
     <h1>Edit Book</h1>
     <div>
         <form th:object="${book}" th:action="@{/save}" method="post" >
             <input type="hidden" th:field="*{id}" class="form-control" />
-            <label for="title">Title</label>
-            <input type="text" th:field="*{title}" placeholder="Title" />
-            <label for="author">Author</label>
-            <input type="text" th:field="*{author}" placeholder="Author" />
-            <label for="year">Year</label>
-            <input type="text" th:field="*{year}" placeholder="Year" />
-            <label for="isbn">ISBN</label>
-            <input type="text" th:field="*{isbn}" placeholder="ISBN" />
-            <label for="price">Price</label>
-            <input type="text" th:field="*{price}" placeholder="Price" />
+            
+            <label for="title" style="display: block;">Title</label>
+            <input type="text" th:field="*{title}" placeholder="Title" style="display: block; margin-bottom: 10px;"/>
+            
+            <label for="author" style="display: block;">Author</label>
+            <input type="text" th:field="*{author}" placeholder="Author" style="display: block; margin-bottom: 10px;"/>
+            
+            <label for="year" style="display: block;">Year</label>
+            <input type="text" th:field="*{year}" placeholder="Year" style="display: block; margin-bottom: 10px;"/>
+            
+            <label for="isbn" style="display: block;">ISBN</label>
+            <input type="text" th:field="*{isbn}" placeholder="ISBN" style="display: block; margin-bottom: 10px;"/>
+            
+            <label for="price" style="display: block;">Price</label>
+            <input type="text" th:field="*{price}" placeholder="Price" style="display: block; margin-bottom: 10px;"/>
+            
             <input type="submit" class="btn btn-success" value="Save"></input>
         </form>
     </div>
-    <a th:href="@{/booklist}">Back to Book List</a>
+    <br/>
+    <a th:href="@{/booklist}" class="btn btn-primary">Back to Book List</a>
 </body>
 </html>

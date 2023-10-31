@@ -10,21 +10,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ProjectBookStore.Bookstore.domain.Book;
 import ProjectBookStore.Bookstore.domain.BookStoreRepository;
+import ProjectBookStore.Bookstore.domain.CategoryRepository;
 
 @Controller
 public class BookController {
 	@Autowired
 	private BookStoreRepository repository;
+	
+	@Autowired
+	private CategoryRepository crepository;
 
 	@RequestMapping(value = { "/booklist" })
 	public String bookList(Model model) {
-		model.addAttribute("books", repository.findAll());
+		model.addAttribute("bookList", repository.findAll());
 		return "booklist";
 	}
 
 	@RequestMapping(value = "/addbook")
-	public String addStudent(Model model) {
+	public String addBook(Model model) {
 		model.addAttribute("book", new Book());
+		model.addAttribute("categories",crepository.findAll());
 		return "addbook";
 	}
 
