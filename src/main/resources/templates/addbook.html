@@ -34,18 +34,18 @@
 				style="display: block; margin-bottom: 10px;" />
 			
 			<div style="clear:both; display: block; height: 10px;"></div>
-			<label for="category" style="display: block;">Category</label>
-			
-            <select id="category" th:field="*{category.categoryid}" class="form-control">
-                <option th:each="catg : ${categories}" th:value="${catg.category}" th:text="${catg.name}"></option>
+			<label for="catlist">Category</label>
+            <select id="catlist" th:field="*{category}" class="form-control">
+                <option th:each="category: ${categorys}" th:value="${category.categoryid}" th:text="${category.name}"></option>
             </select>
 			
-			
+
 			<br />
-			<input type="submit" value="Save" class="btn btn-primary" />
+			<a th:href="@{/booklist}" class="btn btn-danger">Cancel</a>
+			<input type="submit" value="Save" class="btn btn-success" />
 		</form>
 	</div>
 	<br />
-	<a th:href="@{/addbook}" class="btn btn-success">Add Book</a>
+	<a th:href="@{/addbook}" class="btn btn-primary">Add Book</a>
 </body>
 </html>

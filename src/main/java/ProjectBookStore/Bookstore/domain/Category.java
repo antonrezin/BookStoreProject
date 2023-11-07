@@ -19,7 +19,8 @@ public class Category {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
 	private List<Book> books;
 
-	public Category() {}
+	public Category() {
+	}
 
 	public Category(String name) {
 		super();
@@ -50,4 +51,8 @@ public class Category {
 		this.books = books;
 	}
 
+	@Override
+	public String toString() {
+		return "Category [categoryid=" + categoryid + ", name=" + name + "]";
+	}
 }
