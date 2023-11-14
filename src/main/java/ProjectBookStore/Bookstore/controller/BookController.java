@@ -8,12 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import ProjectBookStore.Bookstore.domain.Book;
 import ProjectBookStore.Bookstore.domain.BookStoreRepository;
-import ProjectBookStore.Bookstore.domain.Category;
 import ProjectBookStore.Bookstore.domain.CategoryRepository;
 
 @Controller
